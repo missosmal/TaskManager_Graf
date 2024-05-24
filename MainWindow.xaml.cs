@@ -20,9 +20,14 @@ namespace TaskManager_Graf
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary> Ссылка на главное окно </summary>
+        public static MainWindow init;
+
         public MainWindow()
         {
             InitializeComponent();
+            init = this; // Запоминаем главное окно
+            DataContext = new VM_Pages(); // В качестве контекста, указываем модель ViewModelPages
         }
     }
 }
