@@ -153,7 +153,7 @@ namespace TaskManager_Graf.Models
                     IsEnable = !IsEnable; // Изменяем состояние изменения представления
                     if (IsEnable) // Если состояние не активно
                         // Возвращаем данные в контексте TaskContext
-                        (MainWindow.init.DataContext as ViewModels.VM.Pages).vm_tasks.tasksContext.SaveChanges();
+                        (MainWindow.init.DataContext as ViewModels.VM_Pages).vm_tasks.tasksContext.SaveChanges();
                 });
             }
         }
@@ -167,9 +167,9 @@ namespace TaskManager_Graf.Models
                 return new RealyCommand(obj => { // Выполняем команду
                     if (MessageBox.Show("Вы хотите удалить задачу?", "Предупреждение", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
-                        (MainWindow.init.DataContext as ViewModels.VM.Pages).vm_tasks.Tasks.Remove(this);
-                        (MainWindow.init.DataContext as ViewModels.VM.Pages).vm_tasks.tasksContext.Remove(this);
-                        (MainWindow.init.DataContext as ViewModels.VM.Pages).vm_tasks.tasksContext.SaveChanges();
+                        (MainWindow.init.DataContext as ViewModels.VM_Pages).vm_tasks.Tasks.Remove(this);
+                        (MainWindow.init.DataContext as ViewModels.VM_Pages).vm_tasks.tasksContext.Remove(this);
+                        (MainWindow.init.DataContext as ViewModels.VM_Pages).vm_tasks.tasksContext.SaveChanges();
                     }
                 });
             }
