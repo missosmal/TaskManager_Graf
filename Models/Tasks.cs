@@ -168,7 +168,7 @@ namespace TaskManager_Graf.Models
                     if (MessageBox.Show("Вы хотите удалить задачу?", "Предупреждение", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
                         (MainWindow.init.DataContext as ViewModels.VM.Pages).vm_tasks.Tasks.Remove(this);
-                        (MainWindow.init.DataContext as ViewModels.VM.Pages).vm_tasks.TasksContext.Remove(this);
+                        (MainWindow.init.DataContext as ViewModels.VM.Pages).vm_tasks.tasksContext.Remove(this);
                         (MainWindow.init.DataContext as ViewModels.VM.Pages).vm_tasks.tasksContext.SaveChanges();
                     }
                 });
